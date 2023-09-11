@@ -37,6 +37,12 @@
         "projectId": "4e5aca8b-d94d-46d7-90a5-2056eb7b520a"
       }
     },
-    "owner": "ermlxmn25"
+    "owner": "ermlxmn25",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/4e5aca8b-d94d-46d7-90a5-2056eb7b520a"
+    }
   }
 }

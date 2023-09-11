@@ -1,8 +1,9 @@
 import { StyleSheet, View, Image  } from 'react-native';
+import { Card } from "react-native-elements";
 function Logo() {
   return (
     <View style={styles.logoContainer}>
-      <Image style={styles.logoStyle} source={require('../assets/light.png')} />
+        <Image style={styles.logoStyle} source={require('../assets/light.png')} />
     </View>
   )
 }
@@ -21,7 +22,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     borderColor: '#ddd',
     borderWidth: 4
-  },
+  }
 });
 
 export default Logo
