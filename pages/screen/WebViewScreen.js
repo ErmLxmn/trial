@@ -17,16 +17,16 @@ function WebViewScreen({ route }) {
   };
   
   return (
-    <ImageBackground source={require('../../assets/background-photo/bg-1.jpg')} style={styles.container}>
+    <ImageBackground resizedMode="cover" style={styles.container} source={require("../../assets/background-photo/bg-1.jpg")}>
       <Logo/>
 
       {isLoading && (
-        <ActivityIndicator size="100" color="#E6E6FA" style={styles.spinner} />
+        <ActivityIndicator size="100" color="white" style={styles.spinner} />
       )}
         <WebView
           source={{ uri: url }}
           style={ !isLoading ? styles.webViewStyleActive : styles.webViewStyleHidden}
-          onLoad={handleWebViewLoad} 
+          onLoad={handleWebViewLoad} // Call handleWebViewLoad when the WebView finishes loading
         />
     </ImageBackground>
   );
@@ -40,19 +40,21 @@ const styles = StyleSheet.create({
   },
   webViewStyle: {
     flex: 1,
+    marginTop: 10,
   },
   webViewStyleActive: {
     flex: 1,
+    marginTop: 10,
   },
   webViewStyleHidden: {
-    display: 'none'
+    display: 'none',
   },
   spinner: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 200,
-    height: '100%'
+    marginTop: 300,
+    marginBottom: 400
   },
 });
 

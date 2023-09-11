@@ -1,5 +1,7 @@
-import { StyleSheet, View, Image, Text, TouchableWithoutFeedback } from "react-native";
+import { StyleSheet, View, Image, Text, Dimensions } from "react-native";
 import { useFonts } from "expo-font";
+
+const height = Dimensions.get("window").height;
 
 function Logo() {
   let [isLoading] = useFonts({
@@ -32,8 +34,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     paddingRight: 20,
-    marginTop: 5,
-    marginBottom: 5,
+    marginTop: '5%',
+    marginBottom: '5%',
   },
   logoStyle: {
     width: 80,

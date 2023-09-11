@@ -17,9 +17,9 @@ import Carousel from "react-native-reanimated-carousel";
 import { data, arr } from "../sampleData/sampleData";
 import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
-import CustomFlatList from "../components/CustomFlatList";
 
 const width = Dimensions.get("window").width;
+const height = Dimensions.get("window").height;
 
 export default function Home(props) {
   const [modalVisible, setModalVisible] = useState(false);
@@ -148,7 +148,6 @@ const styles = StyleSheet.create({
     width: width - 10,
     alignSelf: "center",
     borderRadius: 10,
-    marginTop: 20,
     marginHorizontal: 10,
   },
   cardContent: {
@@ -160,6 +159,7 @@ const styles = StyleSheet.create({
     width: width - 5,
     height: width / 3.5,
     borderRadius: 10,
+    marginBottom: '5%',
   },
   centeredView: {
     flex: 1,
@@ -167,8 +167,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   modalView: {
-    backgroundColor: "white",
-    borderRadius: 10,
     alignItems: "center",
     shadowColor: "#000",
     shadowOffset: {
@@ -178,8 +176,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 4,
     height: width + 85,
-    marginTop: 130,
-    width: width - 5,
+    marginTop: '45%',
+    width: width - 10,
     alignSelf: "center",
     backgroundColor: "transparent",
     // opacity: 0.5
