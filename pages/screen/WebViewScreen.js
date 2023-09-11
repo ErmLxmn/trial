@@ -26,7 +26,7 @@ function WebViewScreen({ route }) {
         <WebView
           source={{ uri: url }}
           style={ !isLoading ? styles.webViewStyleActive : styles.webViewStyleHidden}
-          onLoad={handleWebViewLoad} // Call handleWebViewLoad when the WebView finishes loading
+          onLoad={handleWebViewLoad} 
         />
     </ImageBackground>
   );
@@ -51,7 +51,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 200
+    marginTop: 200,
+    height: '100%'
   },
 });
 

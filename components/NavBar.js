@@ -11,7 +11,7 @@ function NavBar() {
   return (
     <NavigationContainer>
       <Tab.Navigator
-        initialRouteName={Home}
+        initialRouteName={<Home modalProps={{visible : false, opacity : 1}}></Home>}
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
@@ -19,11 +19,20 @@ function NavBar() {
 
             if (rn === "Home") {
               iconName = focused ? 'home' : 'home-outline';
-              return <Icon style={{marginTop: 4}} name={iconName} size={size} color='black' />;
+              return <Icon style={{marginTop: 4}} name={iconName} size={size} color={color} />;
             } 
             return null
           },
           tabBarLabel: () => null,
+          tabBarStyle:{
+            backgroundColor : "white",
+            borderTopColor: "#ddd",
+            position: 'absolute',
+            left: 0,
+            right:0,
+          },
+          tabBarActiveTintColor: 'black',
+          tabBarInactiveTintColor: 'gray',
         })}>
         <Tab.Screen name="Home" component={Home}  options={{
             headerShown: false, 

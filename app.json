@@ -4,7 +4,7 @@
     "slug": "trial",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/logo/logo-2.jpg",
     "userInterfaceStyle": "light",
     "androidStatusBar": {
       "backgroundColor": "#000000",
