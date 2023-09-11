@@ -5,6 +5,7 @@ import {
   View,
   TouchableOpacity,
   Image,
+  ImageBackground
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Logo from "../components/Logo";
@@ -23,12 +24,14 @@ export default function Home() {
 
   return (
     <View style={styles.container}>
+    <ImageBackground source={require('../assets/background-photo/bg-1.jpg')} >
       <Logo />
-      <Text style={styles.heading}>Sample Shelves</Text>
+      <Image style={styles.jackpot} source={require('../assets/jackpot.jpg')} resizeMode="stretch"/>
       <Carousel
         width={width}
         autoPlay={false}
         data={data}
+        style={styles.carousel}
         renderItem={({ index, item }) => (
           <TouchableOpacity
             key={item.id}
@@ -36,19 +39,17 @@ export default function Home() {
             style={styles.cardContainer}
           
           >
-            <Card containerStyle={styles.card}>
               <View style={styles.cardContent}>
                 <Image
                   source={item.image}
                   style={styles.cardImage}
-                  resizeMode="center"
-                />
-                <Text style={styles.cardTitle}>{item.title}</Text>
+                  resizeMode="cover"
+                />              
               </View>
-            </Card>
           </TouchableOpacity>
         )}
       />
+    </ImageBackground>
     </View>
   );
 }
@@ -59,32 +60,33 @@ const styles = StyleSheet.create({
     paddingTop: 0,
     backgroundColor: "#fff",
   },
-  heading: {
-    fontSize: 24,
-    fontWeight: "bold",
-    marginBottom: 16,
-    alignSelf: "center",
-    margin: 20
+  carousel:{
+   borderColor :'transparent'
   },
   cardContainer: {
-    height: '90%',
-    marginBottom: 16,
+    borderColor :'transparent'
   },
   cardTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
+    
   },
   cardImage: {
-    flex: 1, 
+    padding: 0,
+    height: width * 1.2,
+    width : width - 10,
+    alignSelf: 'center',
+    borderRadius: 10,
+    marginTop: 20,
+    marginHorizontal: 10
   },
   cardContent: {
-    flex: 1,
-    alignItems: "center",
+    backgroundColor : 'transparent',
+    alignSelf: 'center',
+   
   },
-  card: {
-    alignItems: "center",
-    borderRadius: 10,
-    height: "80%",
-    margin: 10
-  },
+  jackpot : {
+    alignSelf : 'center',
+    width : width - 5,
+    height: width / 3.5,
+    borderRadius: 60
+  }
 });

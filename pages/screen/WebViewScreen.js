@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, ActivityIndicator } from 'react-native';
+import { View, StyleSheet, ActivityIndicator, ImageBackground } from 'react-native';
 import { WebView } from 'react-native-webview';
 import Logo from '../../components/Logo';
 
@@ -17,18 +17,18 @@ function WebViewScreen({ route }) {
   };
   
   return (
-    <View style={styles.container}>
+    <ImageBackground source={require('../../assets/background-photo/bg-1.jpg')} style={styles.container}>
       <Logo/>
 
       {isLoading && (
-        <ActivityIndicator size="large" color="#000000" style={styles.spinner} />
+        <ActivityIndicator size="100" color="#E6E6FA" style={styles.spinner} />
       )}
         <WebView
           source={{ uri: url }}
           style={ !isLoading ? styles.webViewStyleActive : styles.webViewStyleHidden}
           onLoad={handleWebViewLoad} // Call handleWebViewLoad when the WebView finishes loading
         />
-    </View>
+    </ImageBackground>
   );
 }
 
@@ -40,11 +40,9 @@ const styles = StyleSheet.create({
   },
   webViewStyle: {
     flex: 1,
-    marginTop: 10,
   },
   webViewStyleActive: {
     flex: 1,
-    marginTop: 10,
   },
   webViewStyleHidden: {
     display: 'none'
